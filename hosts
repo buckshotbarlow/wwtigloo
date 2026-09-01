@@ -10,10 +10,38 @@
 172.16.10.1    wwtgw
 
 # -------------Jump nodes
-172.16.10.11  z4jump1
-172.16.10.12  z4jump2
-192.168.1.211  z4jump1
-192.168.1.212  z4jump2
+172.16.10.11   z4jump1p
+172.16.10.12   z4jump2p
+192.168.1.201  z4jump1
+192.168.1.202  z4jump2
+
+# ------------- Cluster VIPs
+192.168.1.100   rancher.c1demo.me         rancher
+192.168.1.100   harvester.c1demo.me       harvester
+192.168.1.100   keycloak.c1demo.me        keycloak
+192.168.1.100   registry.c1demo.me        registry
+192.168.1.100   fileserver.c1demo.me      fileserver
+192.168.1.100   webserver.c1demo.me       webserver
+192.168.1.100   apps.c1demo.me            apps
+192.168.1.100   auth.c1demo.me            auth
+192.168.1.100   server.auth.c1demo.me     server.auth
+192.168.1.100   notary.c1demo.me          notary
+192.168.1.99    traefikc1.c1demo.me       traefikc1
+
+192.168.1.200   rancher.c2demo.me         rancher
+192.168.1.200   harvester.c2demo.me       harvester
+192.168.1.200   keycloak.c2demo.me        keycloak
+192.168.1.200   registry.c2demo.me        registry
+192.168.1.200   fileserver.c2demo.me      fileserver
+192.168.1.200   webserver.c2demo.me       webserver
+192.168.1.200   apps.c2demo.me            apps
+192.168.1.200   auth.c2demo.me            auth
+192.168.1.200   server.auth.c2demo.me     server.auth
+192.168.1.200   notary.c2demo.me          notary
+192.168.1.199    traefikc2.c2demo.me       traefikc2
+
+# ------------- NFS and HTTP server
+192.168.1.240  nfssrv
 
 # -------------  IGLOO Cluster Environment base IP's
 192.168.1.1   n9336-1
@@ -44,9 +72,10 @@
 192.168.1.111  dl385n1
 192.168.1.112  dl385n2
 192.168.1.113  dl385n3
+192.168.1.123  z4rn1
+
+# -------------  IGLOO Cluster2
 192.168.1.114  dl385n4
 192.168.1.115  dl385n5
 192.168.1.116  dl385n6
-
-192.168.1.123  z4rn1
 192.168.1.124  z4rn2
