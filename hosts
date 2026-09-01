@@ -26,7 +26,7 @@
 192.168.1.100   auth.c1demo.me            auth
 192.168.1.100   server.auth.c1demo.me     server.auth
 192.168.1.100   notary.c1demo.me          notary
-192.168.1.99    traefikc1.c1demo.me       traefikc1
+192.168.1.99    traefikc1.c1demo.me       c1traefik
 
 192.168.1.200   rancher.c2demo.me         rancher
 192.168.1.200   harvester.c2demo.me       harvester
@@ -38,7 +38,7 @@
 192.168.1.200   auth.c2demo.me            auth
 192.168.1.200   server.auth.c2demo.me     server.auth
 192.168.1.200   notary.c2demo.me          notary
-192.168.1.199    traefikc2.c2demo.me       traefikc2
+192.168.1.199    traefikc2.c2demo.me      c2traefik
 
 # ------------- NFS and HTTP server
 192.168.1.240  nfssrv
