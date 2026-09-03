@@ -1,0 +1,691 @@
+!Command: show running-config
+!Running configuration last done at: Thu Sep  3 15:34:41 2026
+!Time: Thu Sep  3 20:30:40 2026
+
+version 9.3(5) Bios:version 05.39 
+hostname C9336C-FX2-27
+vdc C9336C-FX2-27 id 1
+  limit-resource vlan minimum 16 maximum 4094
+  limit-resource vrf minimum 2 maximum 4096
+  limit-resource port-channel minimum 0 maximum 511
+  limit-resource u4route-mem minimum 248 maximum 248
+  limit-resource u6route-mem minimum 96 maximum 96
+  limit-resource m4route-mem minimum 58 maximum 58
+  limit-resource m6route-mem minimum 8 maximum 8
+  limit-resource vni_bd minimum 4096 maximum 4096
+
+cfs eth distribute
+feature interface-vlan
+feature lacp
+feature vpc
+
+no password strength-check
+username admin password 5 $5$DNLEEA$2cOl6B0W3x7y9CP.Xjx5WHOTeTBDs/MTwyEVFgIJE45  role network-admin
+ip domain-lookup
+copp profile strict
+snmp-server user admin network-admin auth md5 0x17e49e23bad00808f3739d3255f02870 priv 0x17e49e23bad0080
+8f3739d3255f02870 localizedkey
+rmon event 1 log trap public description FATAL(1) owner PMON@FATAL
+rmon event 2 log trap public description CRITICAL(2) owner PMON@CRITICAL
+rmon event 3 log trap public description ERROR(3) owner PMON@ERROR
+rmon event 4 log trap public description WARNING(4) owner PMON@WARNING
+rmon event 5 log trap public description INFORMATION(5) owner PMON@INFO
+
+ip route 0.0.0.0/0 mgmt0 172.16.38.1
+vlan 1,100
+
+vrf context management
+vpc domain 100
+  peer-keepalive destination 172.16.38.7
+
+interface Vlan1
+
+interface port-channel1
+  switchport
+  switchport mode trunk
+  vpc 1
+
+interface port-channel3
+  switchport
+  switchport mode trunk
+  vpc 3
+
+interface port-channel5
+  switchport
+  switchport mode trunk
+  vpc 5
+
+interface port-channel7
+  switchport
+  switchport mode trunk
+  vpc 7
+
+interface port-channel9
+  switchport
+  switchport mode trunk
+  vpc 9
+
+interface port-channel11
+  switchport
+  switchport mode trunk
+  vpc 11
+
+interface port-channel13
+  switchport
+  switchport mode trunk
+  vpc 13
+
+interface port-channel15
+  switchport
+  switchport mode trunk
+  vpc 15
+
+interface port-channel17
+  switchport
+  switchport mode trunk
+  vpc 17
+
+interface port-channel19
+  switchport
+  switchport mode trunk
+  vpc 19
+
+interface port-channel21
+  switchport
+  switchport mode trunk
+  vpc 21
+
+interface port-channel23
+  switchport
+  switchport mode trunk
+  vpc 23
+
+interface port-channel27
+  switchport
+  switchport mode trunk
+  vpc 27
+
+interface port-channel29
+  switchport
+  switchport mode trunk
+  vpc 29
+
+interface port-channel33
+  switchport
+  switchport mode trunk
+  vpc 33
+
+interface port-channel100
+  switchport
+  switchport mode trunk
+  spanning-tree port type network
+  vpc peer-link
+
+interface Ethernet1/1
+  description Rome
+  switchport
+  switchport mode trunk
+  channel-group 1 mode active
+  no shutdown
+
+interface Ethernet1/2
+  switchport
+  no shutdown
+
+interface Ethernet1/3
+  switchport
+  switchport mode trunk
+  channel-group 3 mode active
+  no shutdown
+
+interface Ethernet1/4
+  switchport
+  no shutdown
+
+interface Ethernet1/5
+  switchport
+  switchport mode trunk
+  channel-group 5 mode active
+  no shutdown
+
+interface Ethernet1/6
+  switchport
+  no shutdown
+
+interface Ethernet1/7
+  switchport
+  switchport mode trunk
+  channel-group 7 mode active
+  no shutdown
+
+interface Ethernet1/8
+  switchport
+  no shutdown
+
+interface Ethernet1/9
+  switchport
+  switchport mode trunk
+  channel-group 9 mode active
+  no shutdown
+
+interface Ethernet1/10
+  switchport
+  no shutdown
+
+interface Ethernet1/11
+  switchport
+  switchport mode trunk
+  channel-group 11 mode active
+  no shutdown
+
+interface Ethernet1/12
+  switchport
+  no shutdown
+
+interface Ethernet1/13
+  switchport
+  switchport mode trunk
+  channel-group 13 mode active
+  no shutdown
+
+interface Ethernet1/14
+  switchport
+  no shutdown
+
+interface Ethernet1/15
+  switchport
+  switchport mode trunk
+  channel-group 15 mode active
+  no shutdown
+
+interface Ethernet1/16
+  switchport
+  no shutdown
+
+interface Ethernet1/17
+  switchport
+  switchport mode trunk
+  channel-group 17 mode active
+  no shutdown
+
+interface Ethernet1/18
+  switchport
+  no shutdown
+
+interface Ethernet1/19
+  switchport
+  switchport mode trunk
+  channel-group 19 mode active
+  no shutdown
+
+interface Ethernet1/20
+  switchport
+  no shutdown
+
+interface Ethernet1/21
+  switchport
+  switchport mode trunk
+  channel-group 21 mode active
+  no shutdown
+
+interface Ethernet1/22
+  switchport
+  no shutdown
+
+interface Ethernet1/23
+  switchport
+  switchport mode trunk
+  channel-group 23 mode active
+  no shutdown
+
+interface Ethernet1/24
+  switchport
+  no shutdown
+
+interface Ethernet1/25
+  switchport
+  no shutdown
+
+interface Ethernet1/26
+  switchport
+  no shutdown
+
+interface Ethernet1/27
+  description Z4 - bottom
+  switchport
+  switchport mode trunk
+  channel-group 27 mode active
+  no shutdown
+
+interface Ethernet1/28
+  switchport
+  no shutdown
+
+interface Ethernet1/29
+  description Z4 - top
+  switchport
+  switchport mode trunk
+  channel-group 29 mode active
+  no shutdown
+
+interface Ethernet1/30
+  switchport
+  no shutdown
+
+interface Ethernet1/31
+  switchport
+  no shutdown
+
+interface Ethernet1/32
+  switchport
+  no shutdown
+
+interface Ethernet1/33
+  switchport
+  switchport mode trunk
+  channel-group 33 mode active
+  no shutdown
+
+interface Ethernet1/34
+  switchport
+  no shutdown
+
+interface Ethernet1/35
+  switchport
+  switchport mode trunk
+  channel-group 100 mode active
+  no shutdown
+
+interface Ethernet1/36
+  switchport
+  switchport mode trunk
+  channel-group 100 mode active
+  no shutdown
+
+interface mgmt0
+  vrf member management
+  ip address 172.16.38.6/24
+icam monitor scale
+
+line console
+line vty
+boot nxos bootflash:/nxos.9.3.5.bin 
+
+
+
+C9336C-FX2-27#  
+attach                  event                   pktmgr                  ssh6                  
+blink                   exit                    poll-period             switchback            
+bloggerd                find                    pop                     switchto              
+callhome                format                  priority-flow-control   system                
+cd                      ftrace                  push                    tac-pac               
+cfs                     generate                pwd                     tahoe-python          
+change-password         guestshell              python                  tail                  
+checkpoint              gunzip                  python3                 tar                   
+clear                   gzip                    qos                     tclsh                 
+cli                     hardware                reload                  telnet                
+clock                   innoshell               restart                 telnet6               
+configure               install                 rmdir                   terminal              
+copp                    ip                      rollback                test                  
+copy                    key                     routing-context         traceroute            
+crypto                  kill                    run                     traceroute6           
+dchal                   l3vm                    run-script              trap                  
+debug                   load                    scripting               trigger               
+debug-filter            locator-led             send                    undebug               
+delete                  mkdir                   session                 unmount               
+diagnostic              mount                   set                     update                
+diff-clean              move                    setup                   vdc-all               
+dir                     mpls                    show                    virtual-service       
+dos2nxos                mtrace                  sleep                   vpc                   
+echo                    no                      slot                    watch                 
+eemtest                 ntp                     snapshot                where                 
+encryption              personality             sockets                 write                 
+end                     ping                    source                  xml                   
+ethanalyzer             ping6                   ssh                     xmlin                 
+C9336C-FX2-27#  exit
+Connection to 172.16.38.6 closed.
+barlow@z4jump1:~$ ssh 172.16.38.7 -l admin
+The authenticity of host '172.16.38.7 (172.16.38.7)' can't be established.
+RSA key fingerprint is SHA256:K2EBEUY+pJQ8AuDnbIPi1TLkLqdE57r08YmNB55F+7A.
+This key is not known by any other names.
+Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
+Warning: Permanently added '172.16.38.7' (RSA) to the list of known hosts.
+User Access Verification
+(admin@172.16.38.7) Password: 
+
+Cisco Nexus Operating System (NX-OS) Software
+TAC support: http://www.cisco.com/tac
+Copyright (C) 2002-2020, Cisco and/or its affiliates.
+All rights reserved.
+The copyrights to certain works contained in this software are
+owned by other third parties and used and distributed under their own
+licenses, such as open source.  This software is provided "as is," and unless
+otherwise stated, there is no warranty, express or implied, including but not
+limited to warranties of merchantability and fitness for a particular purpose.
+Certain components of this software are licensed under
+the GNU General Public License (GPL) version 2.0 or 
+GNU General Public License (GPL) version 3.0  or the GNU
+Lesser General Public License (LGPL) Version 2.1 or 
+Lesser General Public License (LGPL) Version 2.0. 
+A copy of each such license is available at
+http://www.opensource.org/licenses/gpl-2.0.php and
+http://opensource.org/licenses/gpl-3.0.html and
+http://www.opensource.org/licenses/lgpl-2.1.php and
+http://www.gnu.org/licenses/old-licenses/library.txt.
+C9336C-FX2-28# copy run start
+[########################################] 100%
+Copy complete, now saving to disk (please wait)...
+Copy complete.
+C9336C-FX2-28# show run
+
+!Command: show running-config
+!Running configuration last done at: Thu Sep  3 15:04:41 2026
+!Time: Thu Sep  3 20:02:12 2026
+
+version 9.3(5) Bios:version 05.39 
+hostname C9336C-FX2-28
+vdc C9336C-FX2-28 id 1
+  limit-resource vlan minimum 16 maximum 4094
+  limit-resource vrf minimum 2 maximum 4096
+  limit-resource port-channel minimum 0 maximum 511
+  limit-resource u4route-mem minimum 248 maximum 248
+  limit-resource u6route-mem minimum 96 maximum 96
+  limit-resource m4route-mem minimum 58 maximum 58
+  limit-resource m6route-mem minimum 8 maximum 8
+  limit-resource vni_bd minimum 4096 maximum 4096
+
+cfs eth distribute
+feature interface-vlan
+feature lacp
+feature vpc
+
+username admin password 5 $5$EOEPCA$daN2IjQj0kjzXoIA4/cXmaa06oU8gXC3mWuqGh5NxM.  role network-admin
+ip domain-lookup
+copp profile strict
+snmp-server user admin network-admin auth md5 0x9f3802045aa203952a83adb4f323b974 priv 0x9f3802045aa2039
+52a83adb4f323b974 localizedkey
+rmon event 1 log trap public description FATAL(1) owner PMON@FATAL
+rmon event 2 log trap public description CRITICAL(2) owner PMON@CRITICAL
+rmon event 3 log trap public description ERROR(3) owner PMON@ERROR
+rmon event 4 log trap public description WARNING(4) owner PMON@WARNING
+rmon event 5 log trap public description INFORMATION(5) owner PMON@INFO
+
+ip route 0.0.0.0/0 mgmt0 172.16.38.1
+vlan 1,100
+
+vrf context management
+vpc domain 100
+  peer-keepalive destination 172.16.38.6
+
+interface Vlan1
+
+interface port-channel1
+  switchport
+  switchport mode trunk
+  vpc 1
+
+interface port-channel3
+  switchport
+  switchport mode trunk
+  vpc 3
+
+interface port-channel5
+  switchport
+  switchport mode trunk
+  vpc 5
+
+interface port-channel7
+  switchport
+  switchport mode trunk
+  vpc 7
+
+interface port-channel9
+  switchport
+  switchport mode trunk
+  vpc 9
+
+interface port-channel11
+  switchport
+  switchport mode trunk
+  vpc 11
+
+interface port-channel13
+  switchport
+  switchport mode trunk
+  vpc 13
+
+interface port-channel15
+  switchport
+  switchport mode trunk
+  vpc 15
+
+interface port-channel17
+  switchport
+  switchport mode trunk
+  vpc 17
+
+interface port-channel19
+  switchport
+  switchport mode trunk
+  vpc 19
+
+interface port-channel21
+  switchport
+  switchport mode trunk
+  vpc 21
+
+interface port-channel23
+  switchport
+  switchport mode trunk
+  vpc 23
+
+interface port-channel27
+  switchport
+  switchport mode trunk
+  vpc 27
+
+interface port-channel29
+  switchport
+  switchport mode trunk
+  vpc 29
+
+interface port-channel33
+  switchport
+  switchport mode trunk
+  vpc 33
+
+interface port-channel100
+  switchport
+  switchport mode trunk
+  spanning-tree port type network
+  vpc peer-link
+
+interface Ethernet1/1
+  description Rome
+  switchport
+  switchport mode trunk
+  channel-group 1 mode active
+  no shutdown
+
+interface Ethernet1/2
+  switchport
+  no shutdown
+
+interface Ethernet1/3
+  switchport
+  switchport mode trunk
+  channel-group 3 mode active
+  no shutdown
+
+interface Ethernet1/4
+  switchport
+  no shutdown
+
+interface Ethernet1/5
+  switchport
+  switchport mode trunk
+  channel-group 5 mode active
+  no shutdown
+
+interface Ethernet1/6
+  switchport
+  no shutdown
+
+interface Ethernet1/7
+  switchport
+  switchport mode trunk
+  channel-group 7 mode active
+  no shutdown
+
+interface Ethernet1/8
+  switchport
+  no shutdown
+
+interface Ethernet1/9
+  switchport
+  switchport mode trunk
+  channel-group 9 mode active
+  no shutdown
+
+interface Ethernet1/10
+  switchport
+  no shutdown
+
+interface Ethernet1/11
+  switchport
+  switchport mode trunk
+  channel-group 11 mode active
+  no shutdown
+
+interface Ethernet1/12
+  switchport
+  no shutdown
+
+interface Ethernet1/13
+  switchport
+  switchport mode trunk
+  channel-group 13 mode active
+  no shutdown
+
+interface Ethernet1/14
+  switchport
+  no shutdown
+
+interface Ethernet1/15
+  switchport
+  switchport mode trunk
+  channel-group 15 mode active
+  no shutdown
+
+interface Ethernet1/16
+  switchport
+  no shutdown
+
+interface Ethernet1/17
+  switchport
+  switchport mode trunk
+  channel-group 17 mode active
+  no shutdown
+
+interface Ethernet1/18
+  switchport
+  no shutdown
+
+interface Ethernet1/19
+  switchport
+  switchport mode trunk
+  channel-group 19 mode active
+  no shutdown
+
+interface Ethernet1/20
+  switchport
+  no shutdown
+
+interface Ethernet1/21
+  switchport
+  switchport mode trunk
+  channel-group 21 mode active
+  no shutdown
+
+interface Ethernet1/22
+  switchport
+  no shutdown
+
+interface Ethernet1/23
+  switchport
+  switchport mode trunk
+  channel-group 23 mode active
+  no shutdown
+
+interface Ethernet1/24
+  switchport
+  no shutdown
+
+interface Ethernet1/25
+  switchport
+  no shutdown
+
+interface Ethernet1/26
+  switchport
+  no shutdown
+
+interface Ethernet1/27
+  description Z4 - bottom
+  switchport
+  switchport mode trunk
+  channel-group 27 mode active
+  no shutdown
+
+interface Ethernet1/28
+  switchport
+  no shutdown
+
+interface Ethernet1/29
+  description Z4 - top
+  switchport
+  switchport mode trunk
+  channel-group 29 mode active
+  no shutdown
+
+interface Ethernet1/30
+  switchport
+  no shutdown
+
+interface Ethernet1/31
+  switchport
+  no shutdown
+
+interface Ethernet1/32
+  switchport
+  no shutdown
+
+interface Ethernet1/33
+  switchport
+  switchport mode trunk
+  channel-group 33 mode active
+  no shutdown
+
+interface Ethernet1/34
+  switchport
+  no shutdown
+
+interface Ethernet1/35
+  switchport
+  switchport mode trunk
+  channel-group 100 mode active
+  no shutdown
+
+interface Ethernet1/36
+  switchport
+  switchport mode trunk
+  channel-group 100 mode active
+  no shutdown
+
+interface mgmt0
+  vrf member management
+  ip address 172.16.38.7/24
+icam monitor scale
+
+line console
+line vty
+boot nxos bootflash:/nxos.9.3.5.bin 
