@@ -1,1 +1,300 @@
+C93108TC-FX# show run
+
+!Command: show running-config
+!Running configuration last done at: Thu Sep  3 18:30:18 2026
+!Time: Thu Sep  3 20:08:33 2026
+
+version 10.1(2) Bios:version 05.44 
+hostname C93108TC-FX
+vdc C93108TC-FX id 1
+  limit-resource vlan minimum 16 maximum 4094
+  limit-resource vrf minimum 2 maximum 4096
+  limit-resource port-channel minimum 0 maximum 511
+  limit-resource u4route-mem minimum 248 maximum 248
+  limit-resource u6route-mem minimum 96 maximum 96
+  limit-resource m4route-mem minimum 58 maximum 58
+  limit-resource m6route-mem minimum 8 maximum 8
+
+feature interface-vlan
+feature lacp
+
+no password strength-check
+username admin password 5 $5$H1IrYjBIq3wLu0vR$zEM97/v9lAb4DKmNys3x3gXTUCWDdepxgrjzd3.NeUB  role network
+-admin
+ip domain-lookup
+copp profile strict
+snmp-server user admin network-admin auth md5 0x844f4d280904ef7b8d094186cd883d33 priv des 0x844f4d28090
+4ef7b8d094186cd883d33 localizedkey
+rmon event 1 log trap public description FATAL(1) owner PMON@FATAL
+rmon event 2 log trap public description CRITICAL(2) owner PMON@CRITICAL
+rmon event 3 log trap public description ERROR(3) owner PMON@ERROR
+rmon event 4 log trap public description WARNING(4) owner PMON@WARNING
+rmon event 5 log trap public description INFORMATION(5) owner PMON@INFO
+
+ip route 0.0.0.0/0 172.16.38.1
+vlan 1,38,100
+
+vrf context management
+
+interface Vlan1
+
+interface Vlan38
+  no shutdown
+  ip address 172.16.38.5/24
+
+interface Vlan100
+  no shutdown
+  ip address 192.168.1.254/24
+
+interface port-channel100
+  switchport
+  switchport mode trunk
+
+interface Ethernet1/1
+  switchport
+  switchport access vlan 38
+  no shutdown
+
+interface Ethernet1/2
+  switchport
+  switchport access vlan 38
+  no shutdown
+
+interface Ethernet1/3
+  switchport
+  switchport access vlan 38
+  no shutdown
+
+interface Ethernet1/4
+  switchport
+  switchport access vlan 38
+  no shutdown
+
+interface Ethernet1/5
+  switchport
+  switchport access vlan 38
+  spanning-tree port type edge
+  no shutdown
+
+interface Ethernet1/6
+  switchport
+  switchport access vlan 38
+  spanning-tree port type edge
+  no shutdown
+
+interface Ethernet1/7
+  switchport
+  switchport access vlan 38
+  spanning-tree port type edge
+  no shutdown
+
+interface Ethernet1/8
+  switchport
+  switchport access vlan 38
+  spanning-tree port type edge
+  no shutdown
+
+interface Ethernet1/9
+  switchport
+  switchport access vlan 38
+  spanning-tree port type edge
+  no shutdown
+
+interface Ethernet1/10
+  switchport
+  switchport access vlan 38
+  spanning-tree port type edge
+  no shutdown
+
+interface Ethernet1/11
+  switchport
+  switchport access vlan 38
+  spanning-tree port type edge
+  no shutdown
+
+interface Ethernet1/12
+  switchport
+  switchport access vlan 100
+  spanning-tree port type edge
+  no shutdown
+
+interface Ethernet1/13
+  no shutdown
+
+interface Ethernet1/14
+  no shutdown
+
+interface Ethernet1/15
+  no shutdown
+
+interface Ethernet1/16
+  no shutdown
+
+interface Ethernet1/17
+  switchport
+  switchport access vlan 100
+  no shutdown
+
+interface Ethernet1/18
+  switchport
+  switchport access vlan 100
+  no shutdown
+
+interface Ethernet1/19
+  switchport
+  switchport access vlan 100
+  no shutdown
+
+interface Ethernet1/20
+  switchport
+  switchport access vlan 100
+  no shutdown
+
+interface Ethernet1/21
+  switchport
+  switchport access vlan 100
+  no shutdown
+
+interface Ethernet1/22
+  switchport
+  switchport access vlan 100
+  no shutdown
+
+interface Ethernet1/23
+  switchport
+  switchport access vlan 100
+  no shutdown
+
+interface Ethernet1/24
+  switchport
+  switchport access vlan 100
+  no shutdown
+
+interface Ethernet1/25
+  switchport
+  switchport access vlan 100
+  no shutdown
+
+interface Ethernet1/26
+  switchport
+  switchport access vlan 100
+  no shutdown
+
+interface Ethernet1/27
+  switchport
+  switchport access vlan 100
+  no shutdown
+
+interface Ethernet1/28
+  switchport
+  switchport access vlan 100
+  no shutdown
+
+interface Ethernet1/29
+  switchport
+  switchport access vlan 100
+  no shutdown
+
+interface Ethernet1/30
+  switchport
+  switchport access vlan 100
+  no shutdown
+
+interface Ethernet1/31
+  switchport
+  switchport access vlan 100
+  no shutdown
+
+interface Ethernet1/32
+  switchport
+  switchport access vlan 100
+  no shutdown
+
+interface Ethernet1/33
+  no shutdown
+
+interface Ethernet1/34
+  no shutdown
+
+interface Ethernet1/35
+  no shutdown
+
+interface Ethernet1/36
+  no shutdown
+
+interface Ethernet1/37
+  no shutdown
+
+interface Ethernet1/38
+  no shutdown
+
+interface Ethernet1/39
+  no shutdown
+
+interface Ethernet1/40
+  no shutdown
+
+interface Ethernet1/41
+  no shutdown
+
+interface Ethernet1/42
+  no shutdown
+
+interface Ethernet1/43
+  no shutdown
+
+interface Ethernet1/44
+  no shutdown
+
+interface Ethernet1/45
+  no shutdown
+
+interface Ethernet1/46
+  no shutdown
+
+interface Ethernet1/47
+  no shutdown
+
+interface Ethernet1/48
+  switchport
+  switchport access vlan 38
+  no shutdown
+
+interface Ethernet1/49
+  description Dell
+  switchport
+  switchport mode trunk
+  no shutdown
+
+interface Ethernet1/50
+  no shutdown
+
+interface Ethernet1/51
+  description Dell
+  switchport
+  switchport mode trunk
+  no shutdown
+
+interface Ethernet1/52
+  no shutdown
+
+interface Ethernet1/53
+  switchport
+  switchport mode trunk
+  channel-group 100 mode active
+  no shutdown
+
+interface Ethernet1/54
+  switchport
+  switchport mode trunk
+  channel-group 100 mode active
+  no shutdown
+
+interface mgmt0
+  vrf member management
+icam monitor scale
+
+line console
+line vty
+boot nxos bootflash:/nxos.10.1.2.bin 
 
