@@ -2,18 +2,18 @@
 ::1             localhost ipv6-localhost ipv6-loopback
 
 # -------------Outbound and cisco connections
-192.168.4.254  gw
-192.168.4.253  vlangw
-192.168.4.252  reserved2
-192.168.4.251  reserved1
-192.168.4.250  reserved0
-172.16.10.1    wwtgw
+172.16.38.1    wwtgw
+192.168.1.253  vlangw
+192.168.1.254  gw
 
 # -------------Jump nodes
-172.16.10.11   z4jump1p
-172.16.10.12   z4jump2p
+172.16.10.11   z4jump1v
+172.16.10.12   z4jump2v
+172.16.38.13   harv1m
+172.16.38.99   harvp
 192.168.1.201  z4jump1
 192.168.1.202  z4jump2
+192.168.1.10   harv1-bond
 
 # ------------- Cluster VIPs
 192.168.1.100   rancher.c1demo.me         rancher
