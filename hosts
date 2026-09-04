@@ -82,9 +82,9 @@
 192.168.1.126   jmnlsrv3c2.c2demo.me   jmnlsrv3c2
 
 # Zentyal - LDAP & DNS (shared services, both clusters)
-192.168.1.241   ldap.c1demo.me   ldapc
-192.168.1.241   ldap.c2demo.me   ldapc
-192.168.1.241   dns.c1demo.me    dnsc
-192.168.1.241   dns.c2demo.me    dnsc
-172.16.38.21    ldap
-172.16.38.21    dns
+192.168.1.241   ldap.c1demo.me   ldapc  dnsldap
+192.168.1.241   ldap.c2demo.me   ldapc dnsldap
+192.168.1.241   dns.c1demo.me    dnsc dnsldap
+192.168.1.241   dns.c2demo.me    dnsc dnsldap
+172.16.38.21    ldap dnsldap
+172.16.38.21    dns dnsldap
