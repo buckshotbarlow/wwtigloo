@@ -16,6 +16,7 @@
 172.16.38.12   z4jump2
 192.168.1.201  z4jump1hs.c1.demo.me  z4jump1hs
 192.168.1.202  z4jump2hs.c2.demo.me  z4jump2hs
+172.16.38.13   freeipa
 
 # ------------- Cluster VIPs
 192.168.1.100   rancher.c1.demo.me         rancher
