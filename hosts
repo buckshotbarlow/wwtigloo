@@ -15,8 +15,8 @@
 172.16.38.10   jmnlsrv
 172.16.38.11   z4jump1
 172.16.38.12   z4jump2
-192.168.1.201  z4jump1c
-192.168.1.202  z4jump2c
+192.168.1.201  z4jump1hs.c1demo.me  z4jump1hs
+192.168.1.202  z4jump2hs.c2demo.me  z4jump2hs
 
 # ------------- Cluster VIPs
 192.168.1.100   rancher.c1demo.me         rancher
@@ -44,7 +44,10 @@
 192.168.1.199    traefikc2.c2demo.me      c2traefik
 
 # ------------- NFS and HTTP server
-192.168.1.240  nfssrv
+192.168.1.240   nfssrv.c1demo.me   nfssrv
+192.168.1.240   nfssrv.c2demo.me   nfssrv
+192.168.1.240   s3.c1demo.me   s3
+192.168.1.240   s3.c2demo.me   s3
 
 # ------------- ilo and idrac
 192.168.1.20  jnmlsrv1-ilo
@@ -63,13 +66,23 @@
 192.168.1.33  jmnlsrv3-idrac
 
 # -------------  IGLOO Cluster1
-192.168.1.111  dl385n1
-192.168.1.112  dl385n2
-192.168.1.113  dl385n3
-
+192.168.1.111   dl385n1c1.c1demo.me   dl385n1c1
+192.168.1.112   dl385n2c1.c1demo.me   dl385n2c1
+192.168.1.113   dl385n3c1.c1demo.me   dl385n3c1
+192.168.1.114   dl385n4c1.c1demo.me   dl385n4c1
+192.168.1.115   dl385n5c1.c1demo.me   dl385n5c1
+192.168.1.116   jmnlsrv2c1.c1demo.me   jmnlsrv2c1
 
 # -------------  IGLOO Cluster2
-192.168.1.114  dl385n4
-192.168.1.115  dl385n5
-192.168.1.116  dl385n6
+192.168.1.121   dl385n6c2.c2demo.me   dl385n1c2
+192.168.1.122   dl385n7c2.c2demo.me   dl385n2c2
+192.168.1.123   dl385n8c2.c2demo.me   dl385n3c2
+192.168.1.124   dl385n9c2.c2demo.me   dl385n4c2
+192.168.1.125   dl385n10c2.c2demo.me   dl385n5c2
+192.168.1.126   jmnlsrv3c2.c2demo.me   jmnlsrv3c2
 
+# Zentyal - LDAP & DNS (shared services, both clusters)
+192.168.1.241   ldap.c1demo.me   ldap
+192.168.1.241   ldap.c2demo.me   ldap
+192.168.1.241   dns.c1demo.me    dns
+192.168.1.241   dns.c2demo.me    dns
